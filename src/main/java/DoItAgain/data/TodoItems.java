@@ -36,7 +36,11 @@ public class TodoItems {
 
     public Todo createNewTodo (String description) {
         Todo newTodo = new Todo(TodoSequence.nextTodoId(), description);
+        return addToArray(newTodo);
 
+    }
+
+    private Todo addToArray(Todo newTodo) {
         Todo[] temp = new Todo[todoItems.length +1];
         for(int i= 0; i<temp.length; i++) {
             if(i == temp.length-1) {
